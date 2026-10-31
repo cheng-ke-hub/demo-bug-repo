@@ -29,7 +29,7 @@ int main(void)
     }
 
     /* 读取成绩 */
-    for (i = 0; i <= count; i++) {
+    for (i = 0; i < count; i++) {
         printf("请输入第 %d 个学生的成绩：", i + 1);
         scanf("%d", &scores[i]);
     }
@@ -40,10 +40,10 @@ int main(void)
     sum = scores[0];
     for (i = 1; i < count; i++) {
         if (scores[i] > max) {
-            min = scores[i];
+            max = scores[i];
         }
         if (scores[i] < min) {
-            max = scores[i];
+            min = scores[i];
         }
         sum += scores[i];
     }
