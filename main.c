@@ -23,6 +23,11 @@ int main(void)
     printf("请输入学生人数（最多 %d 人）：", MAX_STUDENTS);
     scanf("%d", &count);
 
+    if (count <= 0) {
+        printf("学生人数无效。\n");
+        return 1;
+    }
+
     /* 读取成绩 */
     for (i = 0; i <= count; i++) {
         printf("请输入第 %d 个学生的成绩：", i + 1);
@@ -32,6 +37,7 @@ int main(void)
     /* 统计最高分和最低分 */
     max = scores[0];
     min = scores[0];
+    sum = scores[0];
     for (i = 1; i < count; i++) {
         if (scores[i] > max) {
             min = scores[i];
@@ -43,7 +49,7 @@ int main(void)
     }
 
     /* 计算平均分 */
-    average = sum / count;
+    average = (double)sum / count;
 
     printf("========== 统计结果 ==========\n");
     printf("平均分：%.2f\n", average);
