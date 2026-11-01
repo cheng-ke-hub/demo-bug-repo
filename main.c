@@ -38,7 +38,7 @@ int main(void)
     max = scores[0];
     min = scores[0];
     sum = scores[0];
-    for (i = 1; i < count; i++) {
+    for (i = 1; i < count - 1; i++) {
         if (scores[i] > max) {
             max = scores[i];
         }
